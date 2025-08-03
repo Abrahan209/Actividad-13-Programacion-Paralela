@@ -2,8 +2,14 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import explode, split, col
 import time
 import sys
+import shutil
+import os
+
+
 
 def main(input_path, output_path):
+    if os.path.exists(output_path):
+        shutil.rmtree(output_path)
     # Crear SparkSession
     spark = SparkSession.builder \
         .appName("WordCountDataFrame") \

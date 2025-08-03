@@ -1,8 +1,12 @@
 from pyspark.sql import SparkSession
 import time
 import sys
+import shutil
+import os
 
 def main(input_path, output_path):
+    if os.path.exists(output_path):
+        shutil.rmtree(output_path)
     # Crear SparkSession y SparkContext
     spark = SparkSession.builder \
         .appName("WordCountRDD") \

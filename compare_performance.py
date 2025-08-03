@@ -2,7 +2,7 @@ import subprocess
 import time
 
 # Configura rutas de dataset y carpetas de salida
-INPUT_PATH = "data/texto.txt"
+INPUT_PATH = r"data\texto.txt"
 OUTPUT_RDD = "output/rdd_wordcount"
 OUTPUT_DF = "output/df_wordcount"
 
